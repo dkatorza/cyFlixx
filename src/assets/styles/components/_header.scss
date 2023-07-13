@@ -1,0 +1,83 @@
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: var(--main-header-color);
+  padding: rem(4px);
+  z-index: 10;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 0.75rem;
+
+    a.cyLogo {
+      width: 148px;
+      height: 38px;
+      object-fit: cover;
+    }
+
+    .search-icon {
+      display: flex;
+      width: 24px;
+      height: 24px;
+      fill: var(--search-icon-color);
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: var(--search-icon-bg-color);
+        z-index: -1;
+        opacity: 0;
+        scale: 0;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+          scale: 1;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+
+      @include for-lg-layout {
+        display: none;
+      }
+    }
+
+    @include for-sm-layout {
+      max-width: 576px;
+    }
+    @include for-md-layout {
+      max-width: 768px;
+    }
+    @include for-lg-layout {
+      max-width: 992px;
+      justify-content: unset;
+      align-items: center;
+      gap: rem(16px);
+    }
+    @include for-xl-layout {
+      max-width: 1200px;
+    }
+    @include for-xxl-layout {
+      max-width: 1400px;
+    }
+  }
+}

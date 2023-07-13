@@ -1,0 +1,13 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h1 {
+    color: var(--main-title-color);
+    font-size: clamp(rem(32px), 2.5vw, 2.5rem);
+    padding: rem(14px) 0;
+    margin: auto;
+    width: 100%;
+  }
+}

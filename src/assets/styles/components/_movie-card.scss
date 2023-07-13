@@ -1,0 +1,38 @@
+.card-wrapper {
+  display: grid;
+  height: 100%;
+
+  .movie-image-wrapper {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .movie-short-details-wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    padding: 0 0.5rem;
+    background: var(--card-details-background-color);
+    padding-top: rem(14px);
+
+    p {
+      font-size: clamp(rem(14px), 2.5vw, 1rem);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+
+      &:first-child {
+        font-weight: 600;
+      }
+    }
+
+    .btn {
+      margin: 8px 0;
+    }
+  }
+}
