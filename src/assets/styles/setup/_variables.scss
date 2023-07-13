@@ -3,33 +3,6 @@
   --main-background-color: hsl(0, 0%, 5%);
   --main-text-color: hsl(0, 0%, 100%);
   --main-header-color: hsl(0, 0%, 7%);
-  --main-title-color: hsl(49.18deg 100% 50%);
-
-  /*header */
-  --search-icon-color: rgb(255, 255, 255);
-  --search-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
-  /*mobile-search */
-  --mobile-search-bg-color: hsla(0, 0%, 13%, 0.998);
-  --mobile-search-close-color: rgba(255, 255, 255);
-  --mobile-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
-  --mobile-search-close-icon-hover-color: hsla(0, 0%, 20%, 0.932);
-
-  /*movie-card */
-  --card-details-background-color: hsl(0deg 0% 16.74% / 93.2%);
-
-  /*button*/
-  --buton-bg-color: linear-gradient(to right, #444444, #464646);
-  --buton-bg-color-hover: transparent
-    linear-gradient(77deg, #181818 0%, #434343 100%) 0% 0% no-repeat padding-box;
-  --button-boxshadow: 9984px 0 0 -5px #282828;
-
-  /*movie-main*/
-  --movie-details-background-color: linear-gradient(
-    152deg,
-    rgba(20, 20, 20, 0.629) 0%,
-    rgba(61, 61, 61, 0.359) 100%
-  );
-  --movie-genre-border-color: rgb(238, 238, 238);
 }
 
 // Breakpoints
