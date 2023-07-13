@@ -1,0 +1,102 @@
+.search-wrapper {
+  display: none;
+  position: relative;
+
+  @include for-lg-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 3px;
+    left: 15px;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    color: var(--search-all-filter-color);
+    border-radius: rem(4px);
+    z-index: 10;
+    cursor: pointer;
+
+    // .filter-popup {
+    //   // position: absolute;
+    //   display: flex;
+    //   flex-direction: column;
+    //   top: 27px;
+    //   left: 26px;
+    //   min-width: 150px;
+    //   width: 100%;
+    //   max-width: 300px;
+    //   padding: rem(8px);
+    //   border-bottom-right-radius: 8px;
+    //   color: var(--main-text-color);
+    //   background: var(--search-all-filter-popup-bg);
+    //   box-shadow: var(--search-all-filter-popup-shadow);
+    //   z-index: 1;
+
+    //   li {
+    //     &:hover {
+    //       transition: all 0.16s ease-in-out;
+    //       color: var(--search-all-filter-popup-hover);
+    //     }
+    //   }
+    // }
+    .filter-btn {
+      width: 100%;
+      padding: rem(4px) rem(16px);
+      background-color: rgb(255, 255, 255);
+      border-top-left-radius: rem(4px);
+      border-bottom-left-radius: rem(4px);
+      border-right: 1px solid var(--search-all-seperator-color);
+    }
+
+    input {
+      position: relative;
+      font-family: 'Poppins';
+      font-weight: 600;
+      font-size: clamp(rem(14px), 2.5vw, 0.75rem);
+      height: 100%;
+      padding: rem(4px) rem(48px) rem(4px) rem(16px);
+      border-top-right-radius: rem(4px);
+      border-bottom-right-radius: rem(4px);
+      border: 1px solid rgb(255, 255, 255);
+      min-width: 500px;
+      width: 100%;
+      outline: none;
+      z-index: 5;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: rem(14px);
+        color: var(--search-placeholder-color);
+      }
+    }
+  }
+
+  .search-icon-wrapper {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    z-index: 10;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: rgb(6, 6, 6);
+      transition: all 0.16s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        fill: rgb(114, 102, 7);
+        transition: all 0.16s ease-in-out;
+      }
+    }
+  }
+}

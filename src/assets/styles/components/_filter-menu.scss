@@ -1,0 +1,44 @@
+.filter-menu-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: rem(8px);
+  background: var(--filter-menu-bg);
+
+  .close-filter {
+    position: absolute;
+    top: rem(6px);
+    right: rem(12px);
+    cursor: pointer;
+    svg {
+      position: relative;
+      fill: var(--filer-menu-close);
+      transition: all 0.16 ease-in-out;
+      width: 16px;
+      z-index: 1;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: rem(3px);
+      right: rem(-4px);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: var(--filer-menu-close-hover);
+      opacity: 0;
+      scale: 0;
+      transition: all 0.16s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        transition: all 0.16s ease-in-out;
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  }
+}

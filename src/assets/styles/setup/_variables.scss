@@ -5,12 +5,46 @@
   --main-header-color: hsl(0, 0%, 7%);
   --main-title-color: hsl(49.18deg 100% 50%);
 
-   /*header */
-   --search-icon-color: rgb(255, 255, 255);
-   --search-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%)
+  /*header */
+  --search-icon-color: rgb(255, 255, 255);
+  --search-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
+  /*mobile-search */
+  --mobile-search-bg-color: hsla(0, 0%, 13%, 0.998);
+  --mobile-search-close-color: rgba(255, 255, 255);
+  --mobile-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
+  --mobile-search-close-icon-hover-color: hsla(0, 0%, 20%, 0.932);
+
+  /*search */
+  --search-placeholder-color: hsl(0, 0%, 45%);
+  --search-border-color: hsl(0, 0%, 45%);
+  --search-all-filter-color: hsl(0, 0%, 0%);
+  --search-all-seperator-color: hsl(0, 0%, 64%);
+  --search-all-filter-popup-hover: hsl(49.18deg 100% 50%);
+  --search-all-filter-popup-shadow: 9984px 0 0 -5px #282828;
+  --search-all-filter-popup-bg: linear-gradient(
+    150deg,
+    rgb(100 99 99 / 91%) 0%,
+    rgb(65 65 62) 42%
+  );
+
+  /*filter-menu */
+
+  --filter-menu-bg: linear-gradient(
+    150deg,
+    rgb(100 99 99 / 91%) 0%,
+    rgb(65 65 62) 42%
+  );
+  --filer-menu-close: hsl(0, 0%, 100%);
+  --filer-menu-close-hover: hsl(0, 0%, 47%);
 
   /*movie-card */
   --card-details-background-color: hsl(0deg 0% 16.74% / 93.2%);
+
+  /*button*/
+  --buton-bg-color: linear-gradient(to right, #444444, #464646);
+  --buton-bg-color-hover: transparent
+    linear-gradient(77deg, #181818 0%, #434343 100%) 0% 0% no-repeat padding-box;
+  --button-boxshadow: 9984px 0 0 -5px #282828;
 }
 
 // Breakpoints
