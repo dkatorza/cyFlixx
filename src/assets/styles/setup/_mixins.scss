@@ -1,0 +1,70 @@
+/* Breakpoint mixins */
+
+@mixin for-sm-layout {
+  @media (min-width: $sm-breakpoint) {
+    @content;
+  }
+}
+@mixin for-md-layout {
+  @media (min-width: $md-breakpoint) {
+    @content;
+  }
+}
+@mixin for-lg-layout {
+  @media (min-width: $lg-breakpoint) {
+    @content;
+  }
+}
+@mixin for-xl-layout {
+  @media (min-width: $xl-breakpoint) {
+    @content;
+  }
+}
+@mixin for-xxl-layout {
+  @media (min-width: $xxl-breakpoint) {
+    @content;
+  }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+//Mixin for adding or removing margin-rigt from table
+
+@mixin mr($size, $margin-right: false) {
+  height: $size;
+
+  @if $margin-right {
+    margin-right: 1rem;
+  }
+}
