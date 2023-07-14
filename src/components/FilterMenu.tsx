@@ -25,9 +25,7 @@ const FilterMenu = ({
 
   useEffect(() => {
     if (selectedCriteria) {
-      setActive(
-        (active) => (active = filterCriteria.indexOf(selectedCriteria))
-      );
+      setActive(filterCriteria.indexOf(selectedCriteria));
     }
   }, []);
 

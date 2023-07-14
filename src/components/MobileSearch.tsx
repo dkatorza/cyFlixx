@@ -23,7 +23,7 @@ export const MobileSearch = ({
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { criteria, query } = useSnapshot(queryState);
+  const { query } = useSnapshot(queryState);
   queryState.criteria = selectedCriteria;
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const MobileSearch = ({
 
   const handleSearch = () => {
     if (location.pathname.includes('/movie') && searchRef.current?.value) {
-      navigate('/home');
+      navigate('/');
     }
   };
 

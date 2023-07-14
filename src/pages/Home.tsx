@@ -74,7 +74,6 @@ export const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [columnWidth, setColumnWidth] = useState(window.innerWidth);
   const [columnCount, setColumnCount] = useState(5);
-  const [gridScroll, setGridScroll] = useState(false);
 
   useEffect(() => {
     setMoviesList(data);
@@ -88,22 +87,6 @@ export const Home = () => {
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const gridElement = gridRef.current;
-
-    if (!gridElement) return;
-
-    const handleGridScroll = () => {
-      setGridScroll(true);
-    };
-
-    gridElement.addEventListener('scroll', handleGridScroll);
-
-    return () => {
-      gridElement.removeEventListener('scroll', handleGridScroll);
     };
   }, []);
 
@@ -140,7 +123,7 @@ export const Home = () => {
 
   return (
     <div className='home-wrapper'>
-      {filteredItems?.length ? <h1>'What to watch'</h1> : ''}
+      {filteredItems?.length ? <h1>What to watch</h1> : ''}
       {isLoading && <Loader msg={'Loading...'} />}
       {error && <Loader msg={'Error...'} />}
       {!isLoading && !error && (
@@ -149,7 +132,7 @@ export const Home = () => {
             <p className='empty-search'>Sorry, your search is empty :(</p>
           )}
           <AutoSizer>
-            {({ height, width }) => (
+            {({ height }) => (
               <Grid
                 columnCount={Math.floor(windowWidth / columnWidth)}
                 columnWidth={columnWidth}

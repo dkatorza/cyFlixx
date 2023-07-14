@@ -5,12 +5,12 @@ import notFoundState from '../stores/notFoundState';
 
 const Page404 = () => {
   const navigate = useNavigate();
-  const { is404 } = useSnapshot(notFoundState);
+  useSnapshot(notFoundState);
 
   useEffect(() => {
     notFoundState.is404 = true;
     const redirectTimeout = setTimeout(() => {
-      navigate('/home');
+      navigate('/');
     }, 3500);
 
     return () => {
@@ -24,7 +24,7 @@ const Page404 = () => {
       <h1>404</h1>
 
       <p>Oops..., you are in the wrong place</p>
-      <Link to={'/home'}>Go back to home</Link>
+      <Link to={'/'}>Go back to home</Link>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Search = ({ setIsFilterOpen, selectedCriteria }: SearchProps) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { criteria, query } = useSnapshot(queryState);
+  const { query } = useSnapshot(queryState);
   queryState.criteria = selectedCriteria;
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Search = ({ setIsFilterOpen, selectedCriteria }: SearchProps) => {
 
   const handleSearch = () => {
     if (location.pathname.includes('/movie') && inputRef.current?.value) {
-      navigate('/home');
+      navigate('/');
     }
   };
 

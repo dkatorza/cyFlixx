@@ -11,7 +11,6 @@ function App() {
       <main>
         <Routes>
           <Route element={<Home />} path='/' />
-          <Route element={<Home />} path='/home' />
           <Route element={<Movie />} path='/movie/:movieId' />
           <Route element={<Page404 />} path='/*' />
         </Routes>

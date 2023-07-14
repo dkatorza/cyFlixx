@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <header style={{ display: isHeaderDisplay ? 'flex' : 'none' }}>
         <div className='header-inner'>
-          <Link to={'/home'} className='cyLogo'>
+          <Link to={'/'} className='cyLogo'>
             <img src={cyLogo} alt='' />
           </Link>
           <div
