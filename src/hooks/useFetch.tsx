@@ -19,15 +19,13 @@ const useFetch = <T,>(url: string, key: string): FetchData<T> => {
       setIsLoading(true);
       try {
         let data: T | null = JSON.parse(
-          window.sessionStorage.getItem(key) || 'null'
+          window.localStorage.getItem(key) || 'null'
         );
 
         if (!data || !key) {
-          console.log('network');
-
           const response = await fetch(url, { signal: controller.signal });
           data = await response.json();
-          window.sessionStorage.setItem(key, JSON.stringify(data));
+          window.localStorage.setItem(key, JSON.stringify(data));
         }
 
         if (isMounted) {

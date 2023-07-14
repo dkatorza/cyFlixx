@@ -23,13 +23,25 @@
       input {
         border: none;
         background-color: transparent;
-        padding: 0.75rem 1rem 0.75rem 0.75rem;
+        padding: 0.75rem 1rem 0.75rem 3.75rem;
         font-size: rem(16px);
         font-weight: 600;
         font-family: 'Poppins';
         color: var(--main-text-color);
         outline: none;
         width: 100%;
+      }
+
+      .search-icon-wrapper {
+        position: relative;
+        left: 14px;
+        top: 4px;
+        cursor: pointer;
+        svg {
+          fill: var(--mobile-search-icon-color);
+          width: 24px;
+          height: 24px;
+        }
       }
     }
 

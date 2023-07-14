@@ -1,5 +1,6 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ResultsEntity } from '../types/general';
+import { useEffect, useState } from 'react';
 
 interface MovieProps {
   movie: ResultsEntity;
@@ -7,42 +8,66 @@ interface MovieProps {
 
 const Movie = () => {
   const location = useLocation();
-  const { movie }: MovieProps = location.state;
+  const navigate = useNavigate();
+  const { movieId } = useParams();
+  const [movieData, setMovieData] = useState<ResultsEntity | null>(null);
+
+  useEffect(() => {
+    const { movie }: MovieProps = location.state || getMovieData();
+    movie ? setMovieData(movie) : navigate('/*');
+  }, []);
+
+  const getMovieData = () => {
+    const moviesData = window.localStorage.getItem('cyMovies');
+
+    if (moviesData !== null) {
+      let movie = JSON.parse(moviesData).results.filter(
+        (res: ResultsEntity) => res.id === movieId
+      )[0];
+
+      return {
+        movie: movie,
+      };
+    } else {
+      navigate('/*');
+    }
+  };
+
   return (
     <div className='movie-wrapper'>
-      <h1> {movie.title} </h1>
-      <span>{movie.description} </span>
+      <h1> {movieData?.title} </h1>
+      <span>{movieData?.description} </span>
       <div className='movie-image-main'>
-        <img src={movie.image} alt={movie.image} />{' '}
+        <img src={movieData?.image} alt={movieData?.image} />
       </div>
 
       <section className='movie-details-wrapper'>
         <p>
-          {movie.genreList &&
-            movie.genreList.map((genre, idx) => {
+          {movieData?.genreList &&
+            movieData?.genreList.map((genre, idx) => {
               return <span key={idx}>{genre.value} </span>;
             })}
         </p>
-        <p>{movie.plot}</p>
+        <p>{movieData?.plot}</p>
         <p>
-          <strong>Duration:</strong> {movie.runtimeStr}{' '}
+          <strong>Duration:</strong> {movieData?.runtimeStr}
         </p>
         <p>
           <span>
             <strong>Stars: </strong>
           </span>
-          {movie.stars}
+          {movieData?.stars}
         </p>
         <p>
           <span>
-            <strong>IMDb RATING:</strong> ⭐{movie.imDbRating}/10{' '}
+            <strong>IMDb RATING:</strong> ⭐{movieData?.imDbRating}/10
           </span>
           <span>
-            <strong>RATED:</strong> {movie.contentRating}{' '}
+            <strong>RATED:</strong> {movieData?.contentRating}
           </span>
           <span>
-            <strong>IMDb VOTES:</strong>{' '}
-            {Number(movie.imDbRatingVotes).toLocaleString()}{' '}
+            <strong>IMDb VOTES:</strong>
+            {Number(movieData?.imDbRatingVotes).toLocaleString()}
           </span>
         </p>
       </section>

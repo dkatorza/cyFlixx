@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import queryState from '../stores/queryState';
 import FilterMenu from './FilterMenu';
+import { ReactComponent as SearchIcon } from '../assets/media/nav/icons-search.svg';
 
 interface MobileSearchProps {
   setIsMobileSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -30,7 +31,7 @@ export const MobileSearch = ({
   }, []);
 
   const handleSearch = () => {
-    if (location.pathname.includes('/movie') && inputRef.current?.value) {
+    if (location.pathname.includes('/movie') && searchRef.current?.value) {
       navigate('/home');
     }
   };
@@ -39,6 +40,9 @@ export const MobileSearch = ({
     <div className='mobile-search-bar'>
       <div className='inputs-wrapper'>
         <div className='inner-bar'>
+          <div className='search-icon-wrapper' onClick={handleSearch}>
+            <SearchIcon />
+          </div>
           <input
             ref={searchRef}
             value={query}
@@ -47,6 +51,7 @@ export const MobileSearch = ({
             placeholder='Search cyFlix'
           />
         </div>
+
         <div
           className='close-search'
           onClick={() => {

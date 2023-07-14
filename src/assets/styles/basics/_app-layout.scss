@@ -27,4 +27,11 @@
       max-width: 1400px;
     }
   }
+
+  footer {
+    color: var(--main-title-color);
+    background-color: var(--main-background-color);
+    position: fixed;
+    bottom: 0;
+  }
 }

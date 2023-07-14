@@ -140,12 +140,14 @@ export const Home = () => {
 
   return (
     <div className='home-wrapper'>
-      <h1>'What to watch'</h1>
+      {filteredItems?.length ? <h1>'What to watch'</h1> : ''}
       {isLoading && <Loader msg={'Loading...'} />}
       {error && <Loader msg={'Error...'} />}
       {!isLoading && !error && (
         <div ref={gridRef} style={{ width: '100%', height: '100vh' }}>
-          {!filteredItems?.length && 'Sorry, your search is empty :('}
+          {!filteredItems?.length && (
+            <p className='empty-search'>Sorry, your search is empty :(</p>
+          )}
           <AutoSizer>
             {({ height, width }) => (
               <Grid

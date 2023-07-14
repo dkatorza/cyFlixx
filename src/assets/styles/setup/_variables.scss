@@ -8,9 +8,15 @@
   /*header */
   --search-icon-color: rgb(255, 255, 255);
   --search-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
+
+  /*404*/
+
+  --notfound-main-bg: hsl(0, 0%, 100%);
+
   /*mobile-search */
   --mobile-search-bg-color: hsla(0, 0%, 13%, 0.998);
   --mobile-search-close-color: rgba(255, 255, 255);
+  --mobile-search-icon-color: rgba(255, 255, 255);
   --mobile-icon-bg-color: hsl(0deg 0% 16.74% / 93.2%);
   --mobile-search-close-icon-hover-color: hsla(0, 0%, 20%, 0.932);
 

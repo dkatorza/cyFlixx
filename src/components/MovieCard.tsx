@@ -9,8 +9,6 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ movie, style, gridScroll }: MovieCardProps) => {
-  // console.log('momomom', movie);
-
   const [cardWidth, setCardWidth] = useState('400px');
 
   useEffect(() => {
