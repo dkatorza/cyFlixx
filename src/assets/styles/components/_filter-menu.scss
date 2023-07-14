@@ -1,15 +1,46 @@
 .filter-menu-wrapper {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  gap: rem(16px);
   width: 100%;
   align-items: center;
   justify-content: center;
   padding: rem(8px);
   background: var(--filter-menu-bg);
+  opacity: 1;
+  animation: slideBottom 0.16s;
+  z-index: 0;
+
+  span {
+    padding: rem(8px) rem(12px);
+    border: 1px solid var(--movie-genre-border-color);
+    font-size: clamp(rem(12px), 2.5vw, 1rem);
+    border-radius: rem(16px);
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.16s ease-in-out;
+
+    &:hover {
+      transition: all 0.16s ease-in-out;
+      font-weight: 700;
+      color: var(--filer-menu-criteria-text-hover);
+      background-color: var(--filer-menu-criteria-hover);
+    }
+
+    &.active {
+      transition: all 0.16s ease-in-out;
+      font-weight: 700;
+      color: var(--filer-menu-criteria-text-hover);
+      background: var(--filer-menu-criteria-active);
+      border: 1px solid var(--filer-menu-criteria-active);
+    }
+  }
 
   .close-filter {
+    display: none;
     position: absolute;
-    top: rem(6px);
+    top: rem(15px);
     right: rem(12px);
     cursor: pointer;
     svg {
@@ -40,5 +71,20 @@
         opacity: 1;
       }
     }
+
+    @include for-lg-layout {
+      display: flex;
+    }
+  }
+}
+
+@keyframes slideBottom {
+  from {
+    opacity: 0;
+    top: -50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
   }
 }

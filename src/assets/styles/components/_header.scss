@@ -70,7 +70,7 @@ header {
     @include for-lg-layout {
       max-width: 992px;
       justify-content: unset;
-      align-items: center;
+      align-items: flex-start;
       gap: rem(16px);
     }
     @include for-xl-layout {

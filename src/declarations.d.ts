@@ -4,3 +4,8 @@ declare module '*.svg' {
   const src: string;
   export default src;
 }
+
+declare module 'valtio' {
+  function useSnapshot<T extends object>(p: T): T;
+  export function proxy<T extends object>(initialObject: T): T;
+}

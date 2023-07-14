@@ -6,6 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 500px;
   }
 
   .filter-wrapper {
@@ -14,6 +16,7 @@
     align-items: center;
     top: 3px;
     left: 15px;
+    width: 100%;
     font-weight: 600;
     background-color: rgb(255, 255, 255);
     color: var(--search-all-filter-color);
@@ -21,36 +24,14 @@
     z-index: 10;
     cursor: pointer;
 
-    // .filter-popup {
-    //   // position: absolute;
-    //   display: flex;
-    //   flex-direction: column;
-    //   top: 27px;
-    //   left: 26px;
-    //   min-width: 150px;
-    //   width: 100%;
-    //   max-width: 300px;
-    //   padding: rem(8px);
-    //   border-bottom-right-radius: 8px;
-    //   color: var(--main-text-color);
-    //   background: var(--search-all-filter-popup-bg);
-    //   box-shadow: var(--search-all-filter-popup-shadow);
-    //   z-index: 1;
-
-    //   li {
-    //     &:hover {
-    //       transition: all 0.16s ease-in-out;
-    //       color: var(--search-all-filter-popup-hover);
-    //     }
-    //   }
-    // }
     .filter-btn {
-      width: 100%;
+      // width: 100%;
       padding: rem(4px) rem(16px);
       background-color: rgb(255, 255, 255);
       border-top-left-radius: rem(4px);
       border-bottom-left-radius: rem(4px);
       border-right: 1px solid var(--search-all-seperator-color);
+      text-transform: capitalize;
     }
 
     input {
@@ -63,7 +44,6 @@
       border-top-right-radius: rem(4px);
       border-bottom-right-radius: rem(4px);
       border: 1px solid rgb(255, 255, 255);
-      min-width: 500px;
       width: 100%;
       outline: none;
       z-index: 5;

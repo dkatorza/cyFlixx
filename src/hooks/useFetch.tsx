@@ -6,7 +6,7 @@ type FetchData<T> = {
   error: string | null;
 };
 
-const useFetch = <T,>(url: string): FetchData<T> => {
+const useFetch = <T,>(url: string, key: string): FetchData<T> => {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -15,11 +15,21 @@ const useFetch = <T,>(url: string): FetchData<T> => {
     let isMounted = true;
     const controller = new AbortController();
 
-    const fetchData = async (url: string) => {
+    const fetchData = async (url: string, key: string) => {
       setIsLoading(true);
       try {
-        const response = await fetch(url, { signal: controller.signal });
-        const data: T = await response.json();
+        let data: T | null = JSON.parse(
+          window.sessionStorage.getItem(key) || 'null'
+        );
+
+        if (!data || !key) {
+          console.log('network');
+
+          const response = await fetch(url, { signal: controller.signal });
+          data = await response.json();
+          window.sessionStorage.setItem(key, JSON.stringify(data));
+        }
+
         if (isMounted) {
           setData(data);
           setError(null);
@@ -36,7 +46,7 @@ const useFetch = <T,>(url: string): FetchData<T> => {
       }
     };
 
-    fetchData(url);
+    fetchData(url, key);
 
     return () => {
       isMounted = false;

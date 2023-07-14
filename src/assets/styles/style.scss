@@ -5,10 +5,17 @@
 
 // Basics
 @import './basics/base.scss';
+@import './basics/app-layout.scss';
 
 //Pages
 @import './pages/home.scss';
 
 //Cmps
 @import './components/header.scss';
+@import './components/mobile-search.scss';
 @import './components/movie-card.scss';
+@import './components/button.scss';
+@import './components/movie.scss';
+@import './components/search.scss';
+@import './components/filter-menu.scss';
+@import './components/loader.scss';

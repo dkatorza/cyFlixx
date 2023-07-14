@@ -35,7 +35,10 @@
     rgb(65 65 62) 42%
   );
   --filer-menu-close: hsl(0, 0%, 100%);
-  --filer-menu-close-hover: hsl(0, 0%, 47%);
+  --filer-menu-close-hover: hsl(0, 0%, 10%);
+  --filer-menu-criteria-text-hover: hsl(0, 0%, 14%);
+  --filer-menu-criteria-hover: hsl(0, 0%, 100%);
+  --filer-menu-criteria-active: hsl(49.18deg 100% 50%);
 
   /*movie-card */
   --card-details-background-color: hsl(0deg 0% 16.74% / 93.2%);
@@ -45,6 +48,17 @@
   --buton-bg-color-hover: transparent
     linear-gradient(77deg, #181818 0%, #434343 100%) 0% 0% no-repeat padding-box;
   --button-boxshadow: 9984px 0 0 -5px #282828;
+
+  /*movie-main*/
+  --movie-details-background-color: linear-gradient(
+    152deg,
+    rgba(20, 20, 20, 0.629) 0%,
+    rgba(61, 61, 61, 0.359) 100%
+  );
+  --movie-genre-border-color: rgb(238, 238, 238);
+
+  /*loader */
+  --loader-circle: hsl(49.18deg 100% 50%);
 }
 
 // Breakpoints

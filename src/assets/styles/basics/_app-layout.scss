@@ -1,0 +1,30 @@
+.app-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: rem(12px);
+
+    @include for-sm-layout {
+      max-width: 576px;
+    }
+    @include for-md-layout {
+      max-width: 768px;
+    }
+    @include for-lg-layout {
+      max-width: 992px;
+    }
+    @include for-xl-layout {
+      max-width: 1200px;
+    }
+    @include for-xxl-layout {
+      max-width: 1400px;
+    }
+  }
+}

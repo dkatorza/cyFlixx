@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import { Home } from './pages/Home';
+import Header from './components/Header';
+import Movie from './pages/Movie';
 
 function App() {
   return (
-    <div>
-      <header>This is Header</header>
+    <div className='app-layout'>
+      <Header />
       <main>
         <Routes>
+          <Route element={<Home />} path='/' />
           <Route element={<Home />} path='/home' />
+          <Route element={<Movie />} path='/movie/:movieId' />
         </Routes>
       </main>
-      <footer>This is footer</footer>
     </div>
   );
 }
