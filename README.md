@@ -1,10 +1,10 @@
-# cyFlix  - your place to for movie info
+# cyFlix  - your place for movie info
 
-***Production link - <a href="https://luxury-selkie-b34ec7.netlify.app/" target="_blank">Jello</a>***
+***Production link - <a href="https://luxury-selkie-b34ec7.netlify.app/" target="_blank">cyFlix</a>***
 
 
 <h2> Technology stack </h2>
-- React, React window, React virtualized .  
+- React, React window, React virtualized.  
 
 
 
